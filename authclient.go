@@ -288,7 +288,7 @@ type Project struct {
 	Partner               string          `json:"partner,omitempty"`
 	Status                string          `json:"status,omitempty"`
 	MaxSchedules          int32           `json:"max_schedules,omitempty"`
-	Flags                 Flags `json:"flags,omitempty"`
+	Flags                 Flags           `json:"flags,omitempty"`
 	SharedWith            []bson.ObjectId `json:"shared_with,omitempty"`
 	NotificationsDisabled bool            `json:"notifications_disabled,omitempty"`
 	NotificationsEmail    string          `json:"notifications_email,omitempty"`
@@ -296,12 +296,12 @@ type Project struct {
 }
 
 type Token struct {
-	Id          bson.ObjectId `json:"_id"`
-	UserId      bson.ObjectId `json:"user_id"`
-	Name        string        `json:"name"`
-	Token       string        `json:"token"`
-	Admin       bool          `json:"admin,omitempty"`
-	
+	Id     bson.ObjectId `json:"_id"`
+	UserId bson.ObjectId `json:"user_id"`
+	Name   string        `json:"name"`
+	Token  string        `json:"token"`
+	Admin  bool          `json:"admin,omitempty"`
+
 	Claims map[string]interface{} `json:"claims,omitempty"`
 }
 
